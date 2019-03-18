@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinnishReferenceNumberValidator", "FinnishReferenceNumberValidator\FinnishReferenceNumberValidator.csproj", "{9CB90AAA-31A6-46FF-A3C7-C7D64C6D73D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceNumberValidator.Tests", "..\ReferenceNumberValidator.Tests\ReferenceNumberValidator.Tests.csproj", "{0226960E-29A7-48DD-A5B0-A461BC78978E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferenceNumberValidator.Tests", "ReferenceNumberValidator.Tests\ReferenceNumberValidator.Tests.csproj", "{DDB6006A-87FC-424A-A3D5-8E90A5A5B1A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{9CB90AAA-31A6-46FF-A3C7-C7D64C6D73D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CB90AAA-31A6-46FF-A3C7-C7D64C6D73D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CB90AAA-31A6-46FF-A3C7-C7D64C6D73D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0226960E-29A7-48DD-A5B0-A461BC78978E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0226960E-29A7-48DD-A5B0-A461BC78978E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0226960E-29A7-48DD-A5B0-A461BC78978E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0226960E-29A7-48DD-A5B0-A461BC78978E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB6006A-87FC-424A-A3D5-8E90A5A5B1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB6006A-87FC-424A-A3D5-8E90A5A5B1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB6006A-87FC-424A-A3D5-8E90A5A5B1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB6006A-87FC-424A-A3D5-8E90A5A5B1A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
