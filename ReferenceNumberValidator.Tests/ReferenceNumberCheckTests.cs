@@ -9,7 +9,14 @@ namespace ReferenceNumberValidator.Tests
         {
             var validReferenceNumber = "12304561";
             Assert.True(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
-        }        
+        }
+
+        [Fact]
+        public void Reference_Number_Can_Have_Spaces()
+        {
+            string validReferenceNumber = "12304 561";
+            Assert.True(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
+        }
 
         [Fact]
         public void Invalid_Reference_CheckSum()
@@ -46,15 +53,22 @@ namespace ReferenceNumberValidator.Tests
         [Fact]
         public void Reference_Number_Cannot_Be_Negative()
         {
-            var validReferenceNumber = "-12304561";
-            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
+            var negativeReferenceNumber = "-12304561";
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(negativeReferenceNumber).IsValid);
         }
 
         [Fact]
         public void Reference_Number_Cannot_Have_Decimals()
         {
-            var validReferenceNumber = "1230456,1";
-            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
+            var referenceNumberWithDecimals = "1230456,1";
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(referenceNumberWithDecimals).IsValid);
+        }
+
+        [Fact]
+        public void Reference_Number_Cannot_Be_Null()
+        {
+            string nullReferenceNumber = null;
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(nullReferenceNumber).IsValid);
         }
     }
 }

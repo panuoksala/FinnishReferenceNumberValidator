@@ -17,11 +17,23 @@ namespace FinnishReferenceNumberValidator
         /// <returns></returns>
         public static ReferenceNumberCheckResult IsValidFinnishReference(string referenceNumber)
         {
+            if (string.IsNullOrEmpty(referenceNumber))
+            {
+                return new ReferenceNumberCheckResult(false, "Reference number cannot be null");
+            }
+
             if (referenceNumber.Length > 20)
+            {
                 return new ReferenceNumberCheckResult(false, "Reference number max length is 20 characters");
+            }
 
             if (referenceNumber.Length < 4)
+            {
                 return new ReferenceNumberCheckResult(false, "Reference number minimum length is 4 characters");
+            }
+
+            // Spaces are allowed, but they won't work in long parse, so remove them before parsing.
+            referenceNumber = referenceNumber.Replace(" ", "");
 
             // Check that reference number contains only digits and also strip leading zeroes.
             if (!long.TryParse(referenceNumber, NumberStyles.Integer, CultureInfo.InvariantCulture, out long refereceNumberWithOutLeadingZeroes))
@@ -29,7 +41,7 @@ namespace FinnishReferenceNumberValidator
                 return new ReferenceNumberCheckResult(false, "Reference number can contain only numeric values");
             }
 
-            if(refereceNumberWithOutLeadingZeroes <0)
+            if (refereceNumberWithOutLeadingZeroes < 0)
             {
                 return new ReferenceNumberCheckResult(false, "Reference number cannot be negative value");
             }
