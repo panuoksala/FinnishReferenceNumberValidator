@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace FinnishReferenceNumberValidator
 {
@@ -23,15 +24,20 @@ namespace FinnishReferenceNumberValidator
                 return new ReferenceNumberCheckResult(false, "Reference number minimum length is 4 characters");
 
             // Check that reference number contains only digits and also strip leading zeroes.
-            if (!long.TryParse(referenceNumber, out long refereceNumberWithOutLeadingZeroes))
+            if (!long.TryParse(referenceNumber, NumberStyles.Integer, CultureInfo.InvariantCulture, out long refereceNumberWithOutLeadingZeroes))
             {
                 return new ReferenceNumberCheckResult(false, "Reference number can contain only numeric values");
+            }
+
+            if(refereceNumberWithOutLeadingZeroes <0)
+            {
+                return new ReferenceNumberCheckResult(false, "Reference number cannot be negative value");
             }
 
             var calcSum = 0;
             var counter = 0;
             int[] weights = { 7, 3, 1 };
-            var strippedReferenceNumber = refereceNumberWithOutLeadingZeroes.ToString();
+            var strippedReferenceNumber = refereceNumberWithOutLeadingZeroes.ToString(CultureInfo.InvariantCulture);
             // Skip check digit, so start from position -2
             for (var i = strippedReferenceNumber.Length - 2; i >= 0; i--)
             {

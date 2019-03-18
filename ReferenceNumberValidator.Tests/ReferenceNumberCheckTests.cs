@@ -9,7 +9,7 @@ namespace ReferenceNumberValidator.Tests
         {
             var validReferenceNumber = "12304561";
             Assert.True(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
-        }
+        }        
 
         [Fact]
         public void Invalid_Reference_CheckSum()
@@ -36,11 +36,25 @@ namespace ReferenceNumberValidator.Tests
         public void Non_Numeric_Reference_Number()
         {
             var nonDigitReferenceNumber = "A12304561";
-            
+
             var result = FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(nonDigitReferenceNumber);
 
             Assert.False(result.IsValid);
             Assert.Contains("only numeric values", result.ValidationMessage);
+        }
+
+        [Fact]
+        public void Reference_Number_Cannot_Be_Negative()
+        {
+            var validReferenceNumber = "-12304561";
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
+        }
+
+        [Fact]
+        public void Reference_Number_Cannot_Have_Decimals()
+        {
+            var validReferenceNumber = "1230456,1";
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(validReferenceNumber).IsValid);
         }
     }
 }
