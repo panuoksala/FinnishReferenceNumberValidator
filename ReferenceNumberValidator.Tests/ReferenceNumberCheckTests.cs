@@ -60,8 +60,8 @@ namespace ReferenceNumberValidator.Tests
         [Fact]
         public void Reference_Number_Cannot_Have_Decimals()
         {
-            var referenceNumberWithDecimals = "1230456,1";
-            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(referenceNumberWithDecimals).IsValid);
+            var decimalReferenceNumber = "1230456,1";
+            Assert.False(FinnishReferenceNumberValidator.ReferenceNumberValidator.IsValidFinnishReference(decimalReferenceNumber).IsValid);
         }
 
         [Fact]
