@@ -2,6 +2,43 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+
+    <!-- Package Information -->
+    <PackageId>FinnishReferenceNumberValidator</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Panu Oksala</Authors>
+    <Company>Panu Oksala</Company>
+    <Product>Finnish Reference Number Validator</Product>
+
+    <!-- Titles and Descriptions -->
+    <AssemblyTitle>FinnishReferenceNumberValidator</AssemblyTitle>
+    <Title>Finnish Reference Number Validator</Title>
+    <Description>A .NET library for validating Finnish reference numbers (viitenumero) with checksum verification according to Finanssiala specifications. Supports spaces, leading zeros, and provides detailed validation messages.</Description>
+    <PackageTags>finnish;reference-number;viitenumero;validation;payment;invoice;banking;finanssiala;finland;checksum</PackageTags>
+
+    <!-- URLs and Repository -->
+    <PackageProjectUrl>https://github.com/panuoksala/FinnishReferenceNumberValidator</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/panuoksala/FinnishReferenceNumberValidator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- License -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <!-- Release Notes -->
+    <PackageReleaseNotes>Initial release - validates Finnish reference numbers with Finanssiala checksum algorithm. Supports .NET 9.0, handles spaces and leading zeros, provides detailed validation messages.</PackageReleaseNotes>
+
+    <!-- Optional but recommended -->
+    <Copyright>Copyright (c) 2026 Panu Oksala</Copyright>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@
 A .NET library for validating Finnish reference numbers (viitenumero) according to the [Finanssiala specification](http://www.finanssiala.fi/maksujenvalitys/dokumentit/kotimaisen_viitteen_rakenneohje.pdf).
 
 [![.NET 9](https://img.shields.io/badge/.NET-9.0-blue.svg)](https://dotnet.microsoft.com/)
+[![NuGet](https://img.shields.io/nuget/v/FinnishReferenceNumberValidator.svg)](https://www.nuget.org/packages/FinnishReferenceNumberValidator/)
 
 ## Features
 
@@ -14,14 +15,16 @@ A .NET library for validating Finnish reference numbers (viitenumero) according 
 
 ## Installation
 
-Add the library to your project:
+Install the package from NuGet:
 
 ```bash
-# From NuGet (if published)
 dotnet add package FinnishReferenceNumberValidator
+```
 
-# Or reference the project directly
-dotnet add reference path/to/FinnishReferenceNumberValidator.csproj
+Or via the Package Manager Console:
+
+```powershell
+Install-Package FinnishReferenceNumberValidator
 ```
 
 ## Usage
